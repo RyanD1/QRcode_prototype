@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block base_head %}
+    {% if title %}
+        <title>QRCode - {{ title }}</title>
+    {% else %}
+        <title>QRCode - Invoice</title>
+    {% endif %}
+{% endblock base_head %}
+
+{% block base_main %}
+    <div class="container">
+    {% block body %} {% endblock %}
+    </div>
+{% endblock base_main %}
