@@ -1,0 +1,6 @@
+{% extends "invoice/base.html" %}
+
+{% block body %}
+    <h1>Invoice Home Page</h1>
+    <h2>Welcome, {% if user.is_authenticated %}{{ user.username }} {% else %} Visitor {% endif %}!</h2>
+{% endblock body%}

@@ -1,0 +1,7 @@
+{% extends "invoice/base.html" %}
+
+{% block body %}
+    <h1>Invoice View Page for # {{invoice.id}}</h1>
+    <h3>From {{invoice.fromCompany.name}} To {% if invoice.toCompany %} {{invoice.toCompany.name}} {% else %} {{invoice.toCompanyName}} {% endif %} sent at {{invoice.date_created}}</h3>
+    <h4>{{invoice.description}}</h4>
+{% endblock body%}
