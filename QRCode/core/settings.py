@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'invoice.apps.InvoiceConfig',
+    'registration.apps.RegistrationConfig',
     # Default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'QRCode.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'QRCode.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database
@@ -124,3 +125,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+# Registration
+
+LOGIN_REDIRECT_URL = 'invoice-home'
+LOGOUT_REDIRECT_URL = 'invoice-home'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

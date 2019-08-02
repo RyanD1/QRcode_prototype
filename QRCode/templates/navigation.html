@@ -7,14 +7,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link" href="{% url 'invoice-home' %}">Home</a>
+            <a class="nav-item nav-link" href="/">Home</a>
             <a class="nav-item nav-link" href="{% url 'invoice-send' %}">Send</a>
-            <a class="nav-item nav-link" href="{% url 'invoice-view' 1234%}">View Sample</a>
+            <a class="nav-item nav-link" href="{% url 'invoice-view' 1%}">View Sample</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Login</a>
-            <a class="nav-item nav-link" href="#">Register</a>
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'password_change' %}">Change password</a>
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Log out</a>
+            {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}">Log in</a>
+            <a class="nav-item nav-link" href="{% url 'signup' %}">Register</a>
+            {% endif %}            
             </div>
         </div>
         </div>

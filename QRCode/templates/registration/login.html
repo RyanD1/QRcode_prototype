@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block base_head %}
+    <title>Log in</title>
+{% endblock base_head %}
+
+{% block base_main %}
+    <h2>Log in</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log in</button>
+        <a class="nav-item nav-link" href="{% url 'password_reset' %}">Forgot Your Password?</a>
+{% endblock base_main %}
