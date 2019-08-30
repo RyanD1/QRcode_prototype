@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block base_head %}
+    <title>Excel Upload</title>
+{% endblock base_head %}
+
+{% block base_main %}
+    <h2>Upload failed, please upload a valid excel file:</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-primary">Upload Excel</button>
+    </form>
+{% endblock base_main %}

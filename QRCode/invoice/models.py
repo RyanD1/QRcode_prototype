@@ -10,6 +10,38 @@ class Invoice(models.Model):
     # TODO change to date_payed?
     last_modified   = models.DateTimeField(auto_now=True)
 
+    """
+    unique_invoice_id                = models.CharField(max_length = 255, primary_key = True)
+    unique_user_id                   = models.ForeignKey('User')
+    upload_timestamp
+    invoice_hash
+    order_number
+    operation_date
+    invoice_date
+    invoice_number
+    customer
+    vat_number
+    concept
+    price
+    quantity
+    discount
+    tax_base
+    deductible_vat_percent
+    deductible_vat
+    equivalence_surcharge_percent
+    equivalence_surcharge
+    withholding_percent
+    withholding
+    total_invoice
+    due_date
+    payment_method
+    bank_account
+    address
+    city
+    postal_number
+    """
+
+
     # TODO more fields / custom fields or seriazized blob for additional data
 
     def __str__(self):
