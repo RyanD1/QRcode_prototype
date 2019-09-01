@@ -27,12 +27,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Uploaded File Storage Location
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Application definition
 
 INSTALLED_APPS = [
     'invoice.apps.InvoiceConfig',
     'registration.apps.RegistrationConfig',
+    'excel_upload.apps.ExcelUploadConfig',
     # Default
     'django.contrib.admin',
     'django.contrib.auth',

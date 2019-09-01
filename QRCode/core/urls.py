@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('invoice/', include('invoice.urls')),
     path('', include('registration.urls')),
+    path('excel_upload/', include('excel_upload.urls')),
 ]
